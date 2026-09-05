@@ -1323,5 +1323,40 @@ function startVoice() {
     recognition.start();
 }
 </script>
+<style>
+@media (max-width: 600px) {
+    button[onclick="startVoice()"] {
+        right: 95px !important;
+        bottom: 100px !important;
+    }
+
+    .ai-button {
+        right: 20px !important;
+        bottom: 100px !important;
+    }
+
+    .music {
+        right: 20px !important;
+        bottom: 25px !important;
+    }
+}
+
+@media (min-width: 601px) {
+    button[onclick="startVoice()"] {
+        right: 105px !important;
+        bottom: 100px !important;
+    }
+
+    .ai-button {
+        right: 25px !important;
+        bottom: 100px !important;
+    }
+
+    .music {
+        right: 25px !important;
+        bottom: 25px !important;
+    }
+}
+</style>
 </body>
 </html>

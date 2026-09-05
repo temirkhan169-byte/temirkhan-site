@@ -1268,6 +1268,60 @@
         }
 
     </script>
+<button
+    onclick="startVoice()"
+    style="
+        position: fixed;
+        bottom: 90px;
+        right: 25px;
+        z-index: 9999;
+        font-size: 25px;
+        border: none;
+        border-radius: 50%;
+        padding: 15px;
+        cursor: pointer;
+    "
+>
+    🎙️
+</button>
 
+<script>
+function startVoice() {
+
+    const SpeechRecognition =
+        window.SpeechRecognition ||
+        window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+        alert("Бұл браузер дауысты тануды қолдамайды 😕");
+        return;
+    }
+
+    const recognition = new SpeechRecognition();
+
+    recognition.lang = "kk-KZ";
+    recognition.interimResults = false;
+
+    recognition.onstart = function() {
+        console.log("Тыңдап жатырмын 🎙️");
+    };
+
+    recognition.onresult = function(event) {
+
+        const text =
+            event.results[0][0].transcript;
+
+        document.getElementById("aiInput").value = text;
+
+        sendAI();
+    };
+
+    recognition.onerror = function(event) {
+        console.log("Voice error:", event.error);
+    };
+
+    recognition.start();
+}
+</script>
 </body>
 </html>

@@ -7,6 +7,7 @@
     <title>Темірхан | Менің сайтым</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -22,7 +23,7 @@
         }
 
         /* =========================
-           SVG АНИМАЦИЯЛЫҚ ФОН
+           ФОН
         ========================= */
 
         .background {
@@ -67,6 +68,7 @@
         }
 
         @keyframes float {
+
             0%, 100% {
                 transform: translate(0, 0) scale(1);
             }
@@ -74,6 +76,7 @@
             50% {
                 transform: translate(40px, -50px) scale(1.15);
             }
+
         }
 
         /* =========================
@@ -91,6 +94,7 @@
 
             background: rgba(5, 8, 22, 0.75);
             backdrop-filter: blur(15px);
+
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
@@ -158,6 +162,7 @@
         }
 
         @keyframes appear {
+
             from {
                 opacity: 0;
                 transform: translateY(50px);
@@ -167,9 +172,11 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+
         }
 
         @keyframes titleGlow {
+
             from {
                 filter: drop-shadow(0 0 5px #60a5fa);
             }
@@ -177,6 +184,7 @@
             to {
                 filter: drop-shadow(0 0 25px #c084fc);
             }
+
         }
 
         /* =========================
@@ -197,9 +205,11 @@
             text-decoration: none;
             color: white;
             font-weight: bold;
+
             border: 1px solid rgba(255,255,255,0.2);
 
             background: rgba(255,255,255,0.08);
+
             backdrop-filter: blur(10px);
 
             transition: 0.3s;
@@ -212,7 +222,11 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #7c3aed
+            );
         }
 
         /* =========================
@@ -244,6 +258,7 @@
             padding: 40px;
 
             background: rgba(255,255,255,0.06);
+
             border: 1px solid rgba(255,255,255,0.12);
 
             border-radius: 25px;
@@ -257,8 +272,6 @@
             transform: translateY(-10px);
             box-shadow: 0 20px 60px rgba(0,0,0,0.4);
         }
-
-        /* Суретке арналған орын */
 
         .profile-photo {
             width: 220px;
@@ -286,6 +299,7 @@
         }
 
         @keyframes photoFloat {
+
             0%,100% {
                 transform: translateY(0);
             }
@@ -293,6 +307,7 @@
             50% {
                 transform: translateY(-15px);
             }
+
         }
 
         .profile-text h3 {
@@ -314,7 +329,10 @@
             margin: auto;
 
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 25px;
         }
 
@@ -351,11 +369,46 @@
         }
 
         /* =========================
-           MUSIC BUTTON
+           GAME
+        ========================= */
+
+        #game {
+            width: 100%;
+            height: 250px;
+
+            background: rgba(255,255,255,0.05);
+
+            border: 2px solid #444;
+
+            border-radius: 20px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        #target {
+            font-size: 40px;
+
+            border: none;
+
+            background: none;
+
+            cursor: pointer;
+
+            position: absolute;
+
+            left: 45%;
+            top: 45%;
+        }
+
+        /* =========================
+           MUSIC
         ========================= */
 
         .music {
             position: fixed;
+
             right: 25px;
             bottom: 25px;
 
@@ -363,6 +416,7 @@
             height: 60px;
 
             border-radius: 50%;
+
             border: none;
 
             background: linear-gradient(
@@ -372,11 +426,13 @@
             );
 
             color: white;
+
             font-size: 25px;
 
             cursor: pointer;
 
-            box-shadow: 0 0 25px rgba(37,99,235,0.5);
+            box-shadow:
+                0 0 25px rgba(37,99,235,0.5);
 
             z-index: 200;
 
@@ -388,33 +444,189 @@
         }
 
         /* =========================
+           AI BUTTON
+        ========================= */
+
+        .ai-button {
+            position: fixed;
+
+            right: 25px;
+            bottom: 100px;
+
+            width: 65px;
+            height: 65px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #9333ea
+            );
+
+            color: white;
+
+            font-size: 28px;
+
+            cursor: pointer;
+
+            z-index: 300;
+
+            box-shadow:
+                0 0 30px rgba(37,99,235,0.6);
+
+            transition: 0.3s;
+        }
+
+        .ai-button:hover {
+            transform: scale(1.1);
+        }
+
+        /* =========================
+           AI CHAT
+        ========================= */
+
+        .ai-chat {
+            position: fixed;
+
+            right: 25px;
+            bottom: 175px;
+
+            width: 350px;
+            height: 450px;
+
+            background: rgba(5,8,22,0.97);
+
+            border: 1px solid rgba(255,255,255,0.15);
+
+            border-radius: 20px;
+
+            z-index: 299;
+
+            display: none;
+
+            flex-direction: column;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .ai-header {
+            padding: 18px;
+
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #9333ea
+            );
+
+            font-weight: bold;
+        }
+
+        .ai-messages {
+            flex: 1;
+
+            padding: 15px;
+
+            overflow-y: auto;
+        }
+
+        .ai-message {
+            padding: 10px;
+
+            margin-bottom: 10px;
+
+            border-radius: 12px;
+
+            line-height: 1.5;
+        }
+
+        .ai-bot {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .ai-user {
+            background: #2563eb;
+
+            margin-left: 30px;
+        }
+
+        .ai-input {
+            display: flex;
+
+            padding: 10px;
+
+            gap: 8px;
+        }
+
+        .ai-input input {
+            flex: 1;
+
+            padding: 12px;
+
+            border-radius: 10px;
+
+            border: none;
+
+            outline: none;
+
+            font-size: 15px;
+        }
+
+        .ai-input button {
+            width: 45px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: #2563eb;
+
+            color: white;
+
+            cursor: pointer;
+
+            font-size: 18px;
+        }
+
+        /* =========================
            FOOTER
         ========================= */
 
         footer {
             padding: 30px;
+
             text-align: center;
 
             color: #94a3b8;
 
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top:
+                1px solid rgba(255,255,255,0.1);
         }
 
         /* =========================
-           ТЕЛЕФОНҒА БЕЙІМДЕУ
+           MOBILE
         ========================= */
 
         @media (max-width: 700px) {
 
             header {
                 flex-direction: column;
+
                 gap: 15px;
+
                 padding: 18px;
             }
 
             nav {
                 gap: 15px;
+
                 flex-wrap: wrap;
+
                 justify-content: center;
             }
 
@@ -428,13 +640,16 @@
 
             .profile {
                 flex-direction: column;
+
                 text-align: center;
+
                 padding: 30px 20px;
             }
 
             .profile-photo {
                 width: 170px;
                 height: 170px;
+
                 font-size: 55px;
             }
 
@@ -448,31 +663,31 @@
 
             .btn {
                 width: 100%;
+
                 max-width: 280px;
             }
-        }
-		#game {
-    width: 100%;
-    height: 250px;
-    background: rgba(255,255,255,0.05);
-    border: 2px solid #444;
-    border-radius: 20px;
-    position: relative;
-}
 
-#target {
-    font-size: 40px;
-    border: none;
-    background: none;
-    cursor: pointer;
-	position: absolute;
-}
+            .ai-chat {
+                right: 10px;
+                bottom: 165px;
+
+                width: calc(100% - 20px);
+
+                height: 430px;
+            }
+
+            .ai-button {
+                right: 20px;
+            }
+
+        }
+
     </style>
 </head>
 
 <body>
 
-    <!-- SVG / АНИМАЦИЯЛЫҚ ФОН -->
+    <!-- ФОН -->
 
     <div class="background">
 
@@ -480,15 +695,19 @@
         <div class="circle circle2"></div>
         <div class="circle circle3"></div>
 
-        <svg width="100%" height="100%"
-             viewBox="0 0 1000 600"
-             preserveAspectRatio="none">
+        <svg
+            width="100%"
+            height="100%"
+            viewBox="0 0 1000 600"
+            preserveAspectRatio="none"
+        >
 
             <path
                 d="M0 400 C200 250 350 550 550 350 C750 150 850 300 1000 180"
                 fill="none"
                 stroke="rgba(255,255,255,0.08)"
-                stroke-width="3">
+                stroke-width="3"
+            >
 
                 <animate
                     attributeName="d"
@@ -498,11 +717,13 @@
                     M0 400 C200 250 350 550 550 350 C750 150 850 300 1000 180;
                     M0 300 C200 500 350 200 550 400 C750 550 850 200 1000 350;
                     M0 400 C200 250 350 550 550 350 C750 150 850 300 1000 180
-                    " />
+                    "
+                />
 
             </path>
 
         </svg>
+
     </div>
 
 
@@ -515,10 +736,23 @@
         </div>
 
         <nav>
-            <a href="#home">Басты бет</a>
-            <a href="#about">Мен туралы</a>
-            <a href="#skills">Қызығушылық</a>
-            <a href="#contact">Байланыс</a>
+
+            <a href="#home">
+                Басты бет
+            </a>
+
+            <a href="#about">
+                Мен туралы
+            </a>
+
+            <a href="#skills">
+                Қызығушылық
+            </a>
+
+            <a href="#contact">
+                Байланыс
+            </a>
+
         </nav>
 
     </header>
@@ -526,11 +760,16 @@
 
     <!-- HERO -->
 
-    <section class="hero" id="home">
+    <section
+        class="hero"
+        id="home"
+    >
 
         <div class="hero-content">
 
-            <h1>Сәлем! 👋</h1>
+            <h1>
+                Сәлем! 👋
+            </h1>
 
             <p>
                 Менің жеке сайтыма қош келдің!
@@ -539,11 +778,17 @@
 
             <div class="buttons">
 
-                <a href="#about" class="btn btn-primary">
+                <a
+                    href="#about"
+                    class="btn btn-primary"
+                >
                     Мен туралы
                 </a>
 
-                <a href="#skills" class="btn">
+                <a
+                    href="#skills"
+                    class="btn"
+                >
                     Қызығушылықтарым
                 </a>
 
@@ -570,13 +815,16 @@
 
             <div class="profile-text">
 
-                <h3>Темірхан</h3>
+                <h3>
+                    Темірхан
+                </h3>
 
                 <p>
-                    Сәлем! Мен сайт жасауды үйреніп бастадым ,
-					қолдап кет мен әлі бұдан да керемет нәрселерді 
-					қосуға барынша тырысамын сенен қажет тек
-					маған қолдау білдіру назарыңа рақмет
+                    Сәлем! Мен сайт жасауды үйреніп бастадым,
+                    қолдап кет. Мен әлі бұдан да керемет
+                    нәрселерді қосуға барынша тырысамын.
+                    Сенен қажет тек маған қолдау білдіру.
+                    Назарыңа рақмет!
                 </p>
 
                 <br>
@@ -608,7 +856,9 @@
                     💻
                 </div>
 
-                <h3>Бағдарламалау</h3>
+                <h3>
+                    Бағдарламалау
+                </h3>
 
                 <p>
                     HTML, CSS және JavaScript
@@ -624,13 +874,24 @@
                     🎮
                 </div>
 
-          <h3>Ойындар</h3>
+                <h3>
+                    Ойындар
+                </h3>
 
-<div id="game">
-    <button id="target">🎯</button>
-</div>
+                <div id="game">
 
-<p>Ұпай: <span id="score">0</span></p>
+                    <button id="target">
+                        🎯
+                    </button>
+
+                </div>
+
+                <p>
+                    Ұпай:
+                    <span id="score">
+                        0
+                    </span>
+                </p>
 
             </div>
 
@@ -641,7 +902,9 @@
                     🚀
                 </div>
 
-                <h3>Жаңа жобалар</h3>
+                <h3>
+                    Жаңа жобалар
+                </h3>
 
                 <p>
                     Өз идеяларымды сайтқа
@@ -667,29 +930,40 @@
 
             <div class="profile-text">
 
-                <h3>Маған хабарлас 👋</h3>
+                <h3>
+                    Маған хабарлас 👋
+                </h3>
 
                 <p>
-                    Бұл жерге кейін Instagram,
-                    Telegram немесе басқа
-                    байланыс жолдарын қосамыз.
+                    Бұл жерден менімен байланыса аласың.
                 </p>
 
                 <br>
 
                 <div class="buttons">
 
-                    <a href="https://instagram.com/zhenis_timosh" class="btn btn-primary" target="_blank">
-    Instagram 
-</a>
+                    <a
+                        href="https://instagram.com/zhenis_timosh"
+                        class="btn btn-primary"
+                        target="_blank"
+                    >
+                        Instagram
                     </a>
 
-                    <a href="https://t.me/silogics" class="btn" target="_blank">
-    Telegram 
-</a>
-<a href="https://wa.me/77478854184" target="_blank" class="btn">
-     WhatsApp
-</a>
+                    <a
+                        href="https://t.me/silogics"
+                        class="btn"
+                        target="_blank"
+                    >
+                        Telegram
+                    </a>
+
+                    <a
+                        href="https://wa.me/77478854184"
+                        target="_blank"
+                        class="btn"
+                    >
+                        WhatsApp
                     </a>
 
                 </div>
@@ -703,19 +977,86 @@
 
     <!-- MUSIC -->
 
-    <audio id="music" loop>
-        <source src="Sweater Weather.mp3" type="audio/mpeg">
+    <audio
+        id="music"
+        loop
+    >
+
+        <source
+            src="Sweater Weather.mp3"
+            type="audio/mpeg"
+        >
+
     </audio>
 
-    <button class="music" onclick="playMusic()">
+    <button
+        class="music"
+        onclick="playMusic()"
+    >
         🎵
     </button>
+
+
+    <!-- AI BUTTON -->
+
+    <button
+        class="ai-button"
+        onclick="toggleAI()"
+    >
+        🤖
+    </button>
+
+
+    <!-- AI CHAT -->
+
+    <div
+        class="ai-chat"
+        id="aiChat"
+    >
+
+        <div class="ai-header">
+            🤖 TEMIRKHAN AI
+        </div>
+
+        <div
+            class="ai-messages"
+            id="aiMessages"
+        >
+
+            <div class="ai-message ai-bot">
+                Сәлем! 👋 Мен TEMIRKHAN AI-мын!
+                Сұрағыңды жаза бер 🚀
+            </div>
+
+        </div>
+
+        <div class="ai-input">
+
+            <input
+                id="aiInput"
+                type="text"
+                placeholder="Сұрағыңды жаз..."
+                onkeydown="if(event.key === 'Enter') sendAI()"
+            >
+
+            <button
+                onclick="sendAI()"
+            >
+                ➤
+            </button>
+
+        </div>
+
+    </div>
 
 
     <!-- FOOTER -->
 
     <footer>
-        © 2026 Темірхан | Менің жеке сайтым өз пікіріңізбен бөлісе кетіңіз сіздің пікір мен үшін өте маңызды 🚀
+
+        © 2026 Темірхан |
+        Менің жеке сайтым 🚀
+
     </footer>
 
 
@@ -723,21 +1064,25 @@
 
     <script>
 
+        /* =========================
+           MUSIC
+        ========================= */
+
         let playing = false;
 
         function playMusic() {
 
-            const music = document.getElementById("music");
+            const music =
+                document.getElementById("music");
 
             if (!playing) {
 
-                if (music.querySelector("source")) {
-                    music.play();
-                }
+                music.play();
 
                 playing = true;
 
-                document.querySelector(".music").innerHTML = "⏸️";
+                document.querySelector(".music")
+                    .innerHTML = "⏸️";
 
             } else {
 
@@ -745,70 +1090,184 @@
 
                 playing = false;
 
-                document.querySelector(".music").innerHTML = "🎵";
+                document.querySelector(".music")
+                    .innerHTML = "🎵";
+
             }
+
         }
 
-    let score = 0;
 
-document.getElementById("target").onclick = function() {
-    score = score + 1;
-    document.getElementById("score").textContent = score;
-	let x = Math.random() * 90;
-    let y = Math.random() * 80;
-	document.getElementById("target").style.left = x + "%";
-document.getElementById("target").style.top = y + "%";
-};
-async function sendAI() {
-    const input = document.getElementById("aiInput");
-    const messages = document.getElementById("aiMessages");
+        /* =========================
+           GAME
+        ========================= */
 
-    const text = input.value.trim();
+        let score = 0;
 
-    if (!text) return;
+        document.getElementById("target").onclick =
+            function() {
 
-    const userMessage = document.createElement("div");
-    userMessage.className = "ai-message ai-user";
-    userMessage.textContent = text;
-    messages.appendChild(userMessage);
+                score = score + 1;
 
-    input.value = "";
+                document.getElementById("score")
+                    .textContent = score;
 
-    const botMessage = document.createElement("div");
-    botMessage.className = "ai-message ai-bot";
-    botMessage.textContent = "Ойланып жатырмын... 🤔";
-    messages.appendChild(botMessage);
+                let x =
+                    Math.random() * 90;
 
-    try {
-        const response = await fetch(
-            "https://temirkhan-ai-f5u6.vercel.app/api/chat2",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    message: text
-                })
+                let y =
+                    Math.random() * 80;
+
+                document.getElementById("target")
+                    .style.left = x + "%";
+
+                document.getElementById("target")
+                    .style.top = y + "%";
+
+            };
+
+
+        /* =========================
+           OPEN / CLOSE AI
+        ========================= */
+
+        function toggleAI() {
+
+            const chat =
+                document.getElementById("aiChat");
+
+            if (chat.style.display === "flex") {
+
+                chat.style.display = "none";
+
+            } else {
+
+                chat.style.display = "flex";
+
+                document.getElementById("aiInput")
+                    .focus();
+
             }
-        );
 
-        const data = await response.json();
-
-        if (data.reply) {
-            botMessage.textContent = data.reply;
-        } else {
-            botMessage.textContent = "Қате болды 😕";
         }
 
-    } catch (error) {
-        botMessage.textContent = "Серверге қосыла алмадым 😕";
-    }
 
-    messages.scrollTop = messages.scrollHeight;
-}
-	</script>
+        /* =========================
+           REAL AI
+        ========================= */
+
+        async function sendAI() {
+
+            const input =
+                document.getElementById("aiInput");
+
+            const messages =
+                document.getElementById("aiMessages");
+
+            const text =
+                input.value.trim();
+
+            if (!text) {
+                return;
+            }
+
+
+            /* USER MESSAGE */
+
+            const userMessage =
+                document.createElement("div");
+
+            userMessage.className =
+                "ai-message ai-user";
+
+            userMessage.textContent =
+                text;
+
+            messages.appendChild(
+                userMessage
+            );
+
+            input.value = "";
+
+
+            /* LOADING */
+
+            const botMessage =
+                document.createElement("div");
+
+            botMessage.className =
+                "ai-message ai-bot";
+
+            botMessage.textContent =
+                "Ойланып жатырмын... 🤔";
+
+            messages.appendChild(
+                botMessage
+            );
+
+            messages.scrollTop =
+                messages.scrollHeight;
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        "https://temirkhan-ai-f5u6.vercel.app/api/chat2",
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body: JSON.stringify({
+                                message: text
+                            })
+                        }
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                if (data.reply) {
+
+                    botMessage.textContent =
+                        data.reply;
+
+                } else if (data.error) {
+
+                    botMessage.textContent =
+                        "AI қатесі: " +
+                        data.error;
+
+                } else {
+
+                    botMessage.textContent =
+                        "AI жауап бере алмады 😕";
+
+                }
+
+
+            } catch (error) {
+
+                console.error(error);
+
+                botMessage.textContent =
+                    "Серверге қосыла алмадым 😕";
+
+            }
+
+
+            messages.scrollTop =
+                messages.scrollHeight;
+
+        }
+
+    </script>
 
 </body>
 </html>
-

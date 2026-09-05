@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="kk">
 <head>
@@ -760,8 +759,56 @@ document.getElementById("target").onclick = function() {
 	document.getElementById("target").style.left = x + "%";
 document.getElementById("target").style.top = y + "%";
 };
-</script>
+async function sendAI() {
+    const input = document.getElementById("aiInput");
+    const messages = document.getElementById("aiMessages");
+
+    const text = input.value.trim();
+
+    if (!text) return;
+
+    const userMessage = document.createElement("div");
+    userMessage.className = "ai-message ai-user";
+    userMessage.textContent = text;
+    messages.appendChild(userMessage);
+
+    input.value = "";
+
+    const botMessage = document.createElement("div");
+    botMessage.className = "ai-message ai-bot";
+    botMessage.textContent = "Ойланып жатырмын... 🤔";
+    messages.appendChild(botMessage);
+
+    try {
+        const response = await fetch(
+            "https://temirkhan-ai-f5u6.vercel.app/api/chat2",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    message: text
+                })
+            }
+        );
+
+        const data = await response.json();
+
+        if (data.reply) {
+            botMessage.textContent = data.reply;
+        } else {
+            botMessage.textContent = "Қате болды 😕";
+        }
+
+    } catch (error) {
+        botMessage.textContent = "Серверге қосыла алмадым 😕";
+    }
+
+    messages.scrollTop = messages.scrollHeight;
+}
+	</script>
 
 </body>
 </html>
-```
+
